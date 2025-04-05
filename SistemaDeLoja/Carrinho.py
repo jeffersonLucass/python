@@ -1,11 +1,11 @@
 class Carrinho:
     def __init__(self):
-        self.itens = []
+        self.itens = []  
 
 
     def adicionar_produto(self, produto, quantidade):
         if produto.quantidade >= quantidade:
-            self.itens.append((produto, quantidade))
+            self.itens.append((produto, quantidade)) 
             produto.quantidade -= quantidade
         else:
             print(f"Estoque insuficiente para {produto.nome}")
