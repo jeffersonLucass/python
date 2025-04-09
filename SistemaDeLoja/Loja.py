@@ -1,9 +1,9 @@
 from Carrinho import Carrinho
-from tabulate import tabulate
+
 class Loja:
     def __init__(self):
         self.produtos = []
-        self.carrinho = Carrinho()
+        self.carrinho = Carrinho() 
 
     def adicionar_produto(self, produto):
         self.produtos.append(produto)
@@ -12,11 +12,8 @@ class Loja:
         if not self.produtos:
             print("Nenhum produto cadastrado.")
         else:
-            dados = [[produto.nome, produto.preco, produto.quantidade] for produto in self.produtos]
-            
-            cabecalhos = ["Nome", "Preço", "Estoque"]
-            
-            print(tabulate(dados, headers=cabecalhos, tablefmt="grid"))
+            for produto in self.produtos:
+                print(f"Nome: {produto.nome}, Preço: {produto.preco}, Estoque: {produto.quantidade}")
 
     def processar_pagamento(self, valor_pago):
         total = self.carrinho.calcular_total()
