@@ -1,0 +1,63 @@
+🎤 Explicação do código da classe Carrinho
+Essa classe representa um carrinho de compras simples, e possui quatro métodos principais:
+
+__init__ (Construtor)
+
+Inicializa o carrinho com uma lista vazia chamada itens, onde serão armazenados os produtos e suas quantidades.
+
+adicionar_produto(produto, quantidade)
+
+Verifica se há estoque suficiente do produto.
+
+Se houver, adiciona uma tupla (produto, quantidade) à lista do carrinho.
+
+Também atualiza o estoque, subtraindo a quantidade adicionada ao carrinho.
+
+Caso contrário, imprime uma mensagem informando que não há estoque suficiente.
+
+calcular_total()
+
+Calcula o valor total da compra somando o preço de cada produto vezes sua quantidade no carrinho.
+
+Retorna o total final.
+
+esvaziar()
+
+Limpa todos os itens do carrinho, como se o usuário cancelasse a compra.
+
+
+---------------------------------------------------------------------------
+
+Explicação do código da classe Loja
+
+Essa classe representa uma loja com produtos e um carrinho de compras. Ela se conecta com a classe `Carrinho`, que foi importada no início.
+
+__init__(Construtor)
+- Inicializa a loja com:
+  - Uma lista de `produtos` vazia.
+  - Um objeto `Carrinho` associado à loja.
+
+
+
+adicionar_produto(produto)
+- Adiciona um novo produto à lista de produtos da loja.
+
+
+
+exibir_produtos()
+- Verifica se há produtos cadastrados.
+  - Se **não houver**, exibe uma mensagem.
+  - Se **houver**, mostra o nome, preço e estoque de cada produto disponível.
+
+
+
+processar_pagamento(valor_pago)
+- Calcula o total do carrinho usando o método `calcular_total()` da classe `Carrinho`.
+- Verifica se o valor pago é suficiente:
+  - Se for, calcula e exibe o troco, esvaziando o carrinho.
+  - Se não for, informa que o pagamento é insuficiente.
+
+
+
+
+
