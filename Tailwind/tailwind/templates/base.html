@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <title>{% block title %} Tailwind Project {% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+        <h1 class="text-3xl font-bold underline">
+            Hello world!
+        </h1>
+        <h2 class="text-4xl text-red-500">Teste Tailwind</h2>
+        <p class="text-gray-700">This is a simple Tailwind CSS template.</p>
+    {% endblock %}
+
+
+
+</body>
+</html>
