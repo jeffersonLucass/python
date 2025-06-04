@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
+
 <body>
     {% extends "base.html" %}
 
-    {% block content %}    
-        <h1>Todo list</h1>
-        {%for todo in todos%} 
-            <p>{{todo.title}} | {{todo.isCompleted}} |  {{todo.created_at|date:'Y/m/d H:i:s'}}</p>    
-        {% endfor%}    
+    {% block content %}
+    <h1>Todo list</h1>
+    {% if todos%}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Completed</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+        </thead>
+        {% for todo in todos %}
+        {% if todo.completed %}
+        <tr class="table-sucess">
+            <td>{{ todo.id}}</td>
+            <td>{{ todo.title}}</td>
+            <td>{{ todo.completed}}</td>
+            <td>{{ todo.created_at}}</td>
+            <td><a href="#">Update</a></td>
+            <td><a href="#">Delete</a></td>
+        </tr>
+        {% else %}
+        <tr>
+            <td>{{ todo.id}}</td>
+            <td>{{ todo.title}}</td>
+            <td>{{ todo.completed}}</td>
+            <td>{{ todo.created_at}}</td>
+            <td><a href="#">Update</a></td>
+            <td><a href="#">Delete</a></td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    {%else%}
+    <p>No todos available.</p>
+    {% endif%}
 
     {% endblock %}
 
 </body>
+
 </html>
